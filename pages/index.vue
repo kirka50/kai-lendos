@@ -4,7 +4,7 @@
 
 <template>
   <div>
-      <slot />
+    Привет
   </div>
 </template>
 
