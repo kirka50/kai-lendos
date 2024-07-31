@@ -1,26 +1,22 @@
 <script setup lang="ts">
-  const colorMode = useColorMode();
-  const testSwitch = ref<boolean>();
+import type { Pinia, Store } from 'pinia';
+import { useThemeModeProvider } from '~/store/themeMode.store';
+import { Theme } from '~/store/themeMode.types';
 
-  const initializeSwitch = (): void  => {
-    testSwitch.value = colorMode.preference === 'dark';
-  }
-  
-  onMounted(initializeSwitch)
-  const updateSwitch = () => {
-    testSwitch.value = !testSwitch.value;
-    testSwitch.value ? colorMode.preference = 'dark' : colorMode.preference = 'light';
-  }
+const colorMode = useColorMode();
+const useThemeMode = useThemeModeProvider();
+const { themeState } = storeToRefs(useThemeMode);
+const isDarkTheme = computed(() => themeState.value == Theme.Dark);
 
 </script>
-// TO-DO Добавить глобальное состояние для выбора темы (Усилить безопастность состояния)
+// TO-DO Создать остальную разметку, докинуть страниц, шапку
 <template>
   <div class="flex justify-between border-b-2 p-5">
     <div class=" font-bold text-xl">
       KaiKane Lending
     </div>
     <div>
-      <UiSwitch class="" :checked="testSwitch" @update:checked="updateSwitch"></UiSwitch>
+      <UiSwitch class="" :checked="isDarkTheme" @update:checked="useThemeMode.switchThemeMode"></UiSwitch>
     </div>
   </div>
   <div class="">
