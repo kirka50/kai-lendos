@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type { Pinia, Store } from 'pinia';
 import { useThemeModeProvider } from '~/store/themeMode.store';
 import { Theme } from '~/store/themeMode.types';
 
