@@ -1,13 +1,18 @@
 import { Theme } from "./themeMode.types"
 
 type TypeThemeState = {
-  themeState: Theme;
+  themeState: Theme | '';
+}
+
+const getPreferenceThemeMode = () => {
+  const colorMode = useColorMode();
+  return colorMode.preference;
 }
 
 
 export const useThemeModeProvider = defineStore('themeProvider', {
-  state: () => (
-    {themeState: Theme.Dark}
+  state: () => <TypeThemeState>(
+      {themeState: getPreferenceThemeMode()}
   ),
   getters: {
     getCurrentThemeMode: (state) => state.themeState
@@ -20,6 +25,6 @@ export const useThemeModeProvider = defineStore('themeProvider', {
         colorMode.preference = theme;
       }
       this.themeState == Theme.Dark ? switchColorMode(Theme.Light) : switchColorMode(Theme.Dark)
-    }
+    },
   }
 })
