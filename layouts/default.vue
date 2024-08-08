@@ -1,23 +1,16 @@
 <script setup lang="ts">
-import { useThemeModeProvider } from '~/store/themeMode.store';
-import { Theme } from '~/store/themeMode.types';
 
-const colorMode = useColorMode();
-colorMode.preference = Theme.Dark;
-const useThemeMode = useThemeModeProvider();
-const { themeState } = storeToRefs(useThemeMode);
-const isDarkTheme = computed(() => themeState.value == Theme.Dark);
-
+import ThemePicker from "~/components/cs/ThemePicker/ThemePicker.vue";
 </script>
-<!--TODO: Создать остальную разметку, докинуть страниц, шапку, сохранять выбор темы-->
+<!--TODO: Создать остальную разметку, докинуть страниц, шапку, пересмотреть централизацию выбора темы-->
 <template>
   <div class="flex justify-between border-b-2 p-5">
     <div class=" font-bold text-xl">
       KaiKane Lending
     </div>
-    <div>
-      <UiSwitch class="" :checked="isDarkTheme" @update:checked="useThemeMode.switchThemeMode"></UiSwitch>
-    </div>
+    <ThemePicker>
+
+    </ThemePicker>
   </div>
   <div class="">
     <slot />
