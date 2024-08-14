@@ -14,7 +14,7 @@ const menuItems = [{name: 'CV', href: '/cv'},{name: 'Проекты', href: '/pr
 </script>
 <!--TODO: Создать остальную разметку, докинуть страниц, шапку, пересмотреть централизацию выбора темы-->
 <template>
-  <div class="flex justify-between border-b-2 p-1">
+  <div class="flex justify-between border-b-2 py-1 px-40">
     <div class="flex justify-between gap-10">
     <div class=" font-bold text-xl hover:bg-accent p-2 rounded-2xl">
       <NuxtLink to="/" :class="{'text-blue-500': route.meta.title == 'KaiKane Lendos'}">
@@ -37,7 +37,7 @@ const menuItems = [{name: 'CV', href: '/cv'},{name: 'Проекты', href: '/pr
     </div>
   <theme-picker class="flex items-center"/>
   </div>
-  <div class="">
+  <div class="px-96 mt-5">
     <slot />
   </div>
 </template>
