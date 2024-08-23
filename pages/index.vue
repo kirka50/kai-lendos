@@ -1,13 +1,15 @@
 <script setup lang="ts">
 import {Card, CardContent} from "~/components/ui/card";
 
+
+
 definePageMeta({
   title: 'KaiKane Lendos'
 })
 </script>
 
 <template>
-  <div class="flex flex-col items-center gap-2">
+  <div class="flex flex-col items-center gap-2 text-xl">
     <Card class="w-full">
       <CardContent>
         <div class="text-8xl font-light">
@@ -17,10 +19,12 @@ definePageMeta({
           Ты на моём лендосе
         </div>
         <div>
-          Наеюсь у тебя всё круто
+          Здесь круто, я тут иногда практикую свои навыки
         </div>
         <div>
-          Я тут балуюсь с анимациями :)
+          Тут находятся мой
+          <CsTextLink link="/cv">CV</CsTextLink>
+          ссылка на мои <CsTextLink link="/projects">Проекты</CsTextLink>, а так же мои любимые <CsTextLink link="/other">Приколюхи</CsTextLink>
         </div>
       </CardContent>
     </Card>
