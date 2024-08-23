@@ -8,9 +8,9 @@ useHead({
 const route = useRoute();
 console.log(route.params)
 </script>
-
+<!--TODO: Сделать резюме, основу взять из того сайта-->
 <template>
-  CV
+
 </template>
 
 <style scoped>
