@@ -3,7 +3,6 @@ import {
   NavigationMenu,
   NavigationMenuItem, NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger
 } from "~/components/ui/navigation-menu";
 
 const route = useRoute();
@@ -11,7 +10,6 @@ console.log(route.meta.title)
 
 const menuItems = [{name: 'CV', href: '/cv'},{name: 'Проекты', href: '/projects'},{name: 'Приколюхи', href: '/other'}]
 </script>
-<!--TODO: Создать остальную разметку, докинуть страниц, шапку, пересмотреть централизацию выбора темы-->
 <template>
   <div class="flex justify-between border-b-2 py-1 px-40">
     <div class="flex justify-between gap-10">
