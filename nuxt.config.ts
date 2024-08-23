@@ -1,6 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
+  app: {
+    baseURL: '/kai-lendos/'
+  },
   devtools: { enabled: false },
   modules: ['@nuxtjs/color-mode','@nuxt/fonts', '@nuxtjs/tailwindcss', 'shadcn-nuxt', '@pinia/nuxt'],
   shadcn: {
