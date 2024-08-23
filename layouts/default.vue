@@ -24,11 +24,11 @@ const menuItems = [{name: 'CV', href: '/cv'},{name: 'Проекты', href: '/pr
         <NavigationMenuList class="flex gap-3">
           <NavigationMenuItem v-for="item in menuItems" :key="item.href" >
             <NavigationMenuLink as-child>
-              <a :href="item.href" class="hover:bg-active
+              <NuxtLink :to="item.href" class="hover:bg-active
               focus:bg-accent p-2 hover:bg-accent rounded-2xl border-2
               border-accent" :class="{'border-blue-500': route.meta.title === item.name}">
                 {{item.name}}
-              </a>
+              </NuxtLink>
             </NavigationMenuLink>
           </NavigationMenuItem>
         </NavigationMenuList>
