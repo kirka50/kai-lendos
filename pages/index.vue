@@ -11,8 +11,8 @@ definePageMeta({
 <template>
   <div class="flex flex-col items-center gap-2 text-xl">
     <Card class="w-full">
-      <CardContent>
-        <div class="text-8xl font-light">
+      <CardContent class="text-center">
+        <div class="text-8xl font-light text-center">
           Привет
         </div>
         <div>
