@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import ThemePicker from "~/components/cs/ThemePicker/ThemePicker.vue";
 import {
   NavigationMenu,
   NavigationMenuItem, NavigationMenuLink,
@@ -35,7 +34,7 @@ const menuItems = [{name: 'CV', href: '/cv'},{name: 'Проекты', href: '/pr
         </NavigationMenuList>
       </NavigationMenu>
     </div>
-  <theme-picker class="flex items-center"/>
+  <CsThemePicker class="flex items-center"/>
   </div>
   <div class="px-96 mt-5">
     <slot />
