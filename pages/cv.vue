@@ -29,7 +29,7 @@ const date = new Date().getFullYear();
           </div>
           <div class="bg-gradient-to-b align-bottom justify-end rounded-2xl bg-accent p-2 w-1/3 h-full flex items-center flex-wrap gap-2">
             <Icon size="2em" name="twemoji:fire"/>
-            <UiBadge v-for="i in 10" class="h-1/6">
+            <UiBadge v-for="i in 10" class="h-1/6 lg:h-1/4">
                 Js
             </UiBadge>
           </div>
