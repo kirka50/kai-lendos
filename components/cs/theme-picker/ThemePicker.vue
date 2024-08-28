@@ -29,7 +29,7 @@ onMounted(() => {
 <template>
   <div>
 <!--    //{{colorMode.value}} {{colorMode.forced}} {{colorMode.unknown}} {{colorMode.preference}}-->
-    <UiSwitch class="" :checked="colorSwitch"  @update:checked="switchColorMode"></UiSwitch>
+    <UiSwitch v-if="!colorMode.unknown" class="" :checked="colorSwitch"  @update:checked="switchColorMode"></UiSwitch>
   </div>
 </template>
 
