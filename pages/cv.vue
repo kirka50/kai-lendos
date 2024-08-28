@@ -13,7 +13,7 @@ const date = new Date().getFullYear();
 </script>
 <!--TODO: Сделать резюме, основу взять из того сайта-->
 <template>
-  <div class="mx-1 lg:mx-46 md:mx-24 sm:mx-1">
+  <div class="">
     <div class="gap-2 flex-col flex">
       <div class="rounded-2xl w-fit overflow-hidden">
         <img src="@/assets/cv/person_image.jpg"  class="h-56 w-56 object-right object-cover" alt="" />
