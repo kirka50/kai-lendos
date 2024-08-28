@@ -6,7 +6,14 @@ export default defineNuxtConfig({
     buildAssetsDir: 'assets',
   },
   devtools: { enabled: false },
-  modules: ['@nuxtjs/color-mode','@nuxt/fonts', '@nuxtjs/tailwindcss', 'shadcn-nuxt', '@pinia/nuxt'],
+  modules: [
+    '@nuxtjs/color-mode',
+    '@nuxt/fonts',
+    '@nuxtjs/tailwindcss',
+    'shadcn-nuxt',
+    '@pinia/nuxt',
+    "@nuxt/icon"
+  ],
   shadcn: {
     /**
      * Prefix for all the imported component
