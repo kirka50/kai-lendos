@@ -27,6 +27,7 @@
     "vue": "latest"
   },
   "devDependencies": {
+    "@iconify-json/twemoji": "^1.1.16",
     "@nuxtjs/color-mode": "^3.4.2",
     "@nuxtjs/tailwindcss": "^6.12.1",
     "shadcn-nuxt": "^0.10.4",

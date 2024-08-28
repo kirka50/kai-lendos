@@ -416,6 +416,13 @@
     "@floating-ui/utils" "^0.2.5"
     "vue-demi" ">=0.13.0"
 
+"@iconify-json/twemoji@^1.1.16":
+  "integrity" "sha512-uAUlu4l7UZXDX2W7kfwttsObf76t+myPRxgIfU6IL1jQsbQTG/ouC2NBhrgBI8iq6eCweDhLuBorCdMlDkE9fQ=="
+  "resolved" "https://registry.npmjs.org/@iconify-json/twemoji/-/twemoji-1.1.16.tgz"
+  "version" "1.1.16"
+  dependencies:
+    "@iconify/types" "*"
+
 "@iconify/collections@^1.0.453":
   "integrity" "sha512-bE/6YBUNhNhTLjytCGrCD+rS0hrlkSC0J4e5svggLVnPoOgvA0yKIAxyUtyWl0666o//3CHlnAizwvA1JYm64w=="
   "resolved" "https://registry.npmjs.org/@iconify/collections/-/collections-1.0.454.tgz"
