@@ -13,7 +13,7 @@ const date = new Date().getFullYear();
 </script>
 <!--TODO: Сделать резюме, основу взять из того сайта-->
 <template>
-  <div class="mx-48">
+  <div class="mx-1 lg:mx-46 md:mx-24 sm:mx-1">
     <div class="gap-2 flex-col flex">
       <div class="rounded-2xl w-fit overflow-hidden">
         <img src="@/assets/cv/person_image.jpg"  class="h-56 w-56 object-right object-cover" alt="" />
@@ -27,9 +27,10 @@ const date = new Date().getFullYear();
             <p>Возраст: {{date - 2002}}</p>
             <p>Место проживания: Екатеринбург</p>
           </div>
-          <div class="bg-gradient-to-b rounded-2xl bg-accent p-2 w-1/3 h-full">
-            <UiBadge>
-              adad
+          <div class="bg-gradient-to-b align-bottom justify-end rounded-2xl bg-accent p-2 w-1/3 h-full flex items-center flex-wrap gap-2">
+            <Icon size="2em" name="twemoji:fire"/>
+            <UiBadge v-for="i in 10" class="h-1/6">
+                Js
             </UiBadge>
           </div>
         </div>

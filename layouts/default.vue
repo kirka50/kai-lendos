@@ -34,7 +34,7 @@ const menuItems = [{name: 'CV', href: '/cv'},{name: 'Проекты', href: '/pr
     </div>
   <CsThemePicker class="flex items-center"/>
   </div>
-  <div class="px-96 mt-5">
+  <div class="xl:px-96 lg:px-96 md:px-48 sm:px-2 px-1 mt-5">
     <slot />
   </div>
 </template>
