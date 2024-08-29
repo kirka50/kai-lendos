@@ -11,7 +11,7 @@ console.log(route.meta.title)
 const menuItems = [{name: 'CV', href: '/cv'},{name: 'Проекты', href: '/projects'},{name: 'Приколюхи', href: '/other'}]
 </script>
 <template>
-  <div class="flex justify-between border-b-2 py-1 px-40">
+  <div class="flex justify-between border-b-2 py-1 lg:px-40 xl:px-56 md:px-10 sm:px-1">
     <div class="flex justify-between gap-10">
     <div class=" font-bold text-xl hover:bg-accent p-2 rounded-2xl">
       <NuxtLink to="/" :class="{'text-blue-500': route.meta.title == 'KaiKane Lendos'}">
