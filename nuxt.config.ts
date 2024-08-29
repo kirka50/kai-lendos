@@ -12,7 +12,29 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     'shadcn-nuxt',
     '@pinia/nuxt',
-    "@nuxt/icon"
+    "@nuxt/icon",
+    [
+      'nuxt-viewport', {
+      viewport: {
+        breakpoints: {
+          xs: 320,
+          sm: 640,
+          md: 768,
+          lg: 1024,
+          xl: 1280,
+          '2xl': 1536,
+        },
+
+        defaultBreakpoints: {
+          desktop: 'lg',
+          mobile: 'xs',
+          tablet: 'md',
+        },
+
+        fallbackBreakpoint: 'lg'
+      },
+    }
+    ],
   ],
   shadcn: {
     /**
