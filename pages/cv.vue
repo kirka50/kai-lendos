@@ -9,6 +9,19 @@ useHead({
 const route = useRoute();
 console.log(route.params)
 
+const cvData = ref(
+    {
+      personData: {
+        birthYear: 2002,
+        livePlace: "Екатеринбург",
+        skillsTags: [{
+          skill: "Js",
+          skillIcon
+        }]
+      }
+    }
+);
+
 const date = new Date().getFullYear();
 </script>
 <!--TODO: Сделать резюме, основу взять из того сайта-->
@@ -20,18 +33,19 @@ const date = new Date().getFullYear();
       </div>
       <div class="">
         <div>
-          <p class="text-4xl">Резников Кирилл Сергеевич</p>
+          <p class="text-4xl font-bold">Резников Кирилл Сергеевич</p>
         </div>
-        <div class="flex justify-between mt-2 h-32">
+        <div class="flex justify-between mt-2">
           <div class="text-xl font-light">
-            <p>Возраст: {{date - 2002}}</p>
-            <p>Место проживания: Екатеринбург</p>
+            <p><strong class="font-bold">Возраст:</strong> {{date - 2002}}</p>
+            <p><strong class="font-bold">Место проживания:</strong> Екатеринбург</p>
           </div>
-          <div class="bg-gradient-to-b align-bottom justify-end rounded-2xl bg-accent p-2 w-1/3 h-full flex items-center flex-wrap gap-2">
-            <Icon size="2em" name="twemoji:fire"/>
-            <UiBadge v-for="i in 10" class="h-1/6 lg:h-1/4">
-                Js
-            </UiBadge>
+          <div class="bg-gradient-to-b align-bottom rounded-2xl
+          bg-accent p-2 w-1/3 h-full flex flex-row gap-2">
+            <div class="w-fit">
+              <Icon size="2em" name="twemoji:fire"/>
+            </div>
+            <div>React, Vue, Js,</div>
           </div>
         </div>
       </div>
