@@ -1,8 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
+import customConfig from "./custom-config";
+
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   app: {
-    baseURL: '/kai-lendos/',
+    baseURL: customConfig.BASE_URL,
     buildAssetsDir: 'assets',
   },
   devtools: { enabled: false },
