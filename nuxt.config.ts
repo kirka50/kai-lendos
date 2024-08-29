@@ -13,29 +13,26 @@ export default defineNuxtConfig({
     'shadcn-nuxt',
     '@pinia/nuxt',
     "@nuxt/icon",
-    [
-      'nuxt-viewport', {
-      viewport: {
-        breakpoints: {
-          xs: 320,
-          sm: 640,
-          md: 768,
-          lg: 1024,
-          xl: 1280,
-          '2xl': 1536,
-        },
-
-        defaultBreakpoints: {
-          desktop: 'lg',
-          mobile: 'xs',
-          tablet: 'md',
-        },
-
-        fallbackBreakpoint: 'lg'
-      },
-    }
-    ],
+    'nuxt-viewport',
   ],
+  viewport: {
+    breakpoints: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      '2xl': 1536,
+    },
+
+    defaultBreakpoints: {
+      desktop: 'lg',
+      mobile: 'xs',
+      tablet: 'md',
+    },
+
+    fallbackBreakpoint: 'lg'
+  },
   shadcn: {
     /**
      * Prefix for all the imported component
