@@ -10,8 +10,8 @@ const route = useRoute();
 const viewport = useViewport();
 console.log(route.meta.title)
 
-const menuItems = [{name: 'CV', href: 'cv'},{name: 'Проекты',
-  href: 'projects'},{name: 'Приколюхи', href: 'other'}]
+const menuItems = [{name: 'CV', href: customConfig.BASE_URL + 'cv'},{name: 'Проекты',
+  href: customConfig.BASE_URL +  'projects'},{name: 'Приколюхи', href: customConfig.BASE_URL +  'other'}]
 </script>
 <template>
   <div class="flex justify-between border-b-2 py-1 lg:px-40 xl:px-56 md:px-10 sm:px-1">
@@ -25,11 +25,11 @@ const menuItems = [{name: 'CV', href: 'cv'},{name: 'Проекты',
         <NavigationMenuList class="flex gap-3"  v-if="viewport.isGreaterThan('xs')">
           <NavigationMenuItem v-for="item in menuItems" :key="item.href" >
             <NavigationMenuLink as-child>
-              <NuxtLink :to="item.href" class="hover:bg-active
+              <a :href="item.href" class="hover:bg-active
               focus:bg-accent p-2 hover:bg-accent rounded-2xl border-2
               border-accent" :class="{'border-blue-500': route.meta.title === item.name}">
                 {{item.name}}
-              </NuxtLink>
+              </a>
             </NavigationMenuLink>
           </NavigationMenuItem>
         </NavigationMenuList>
@@ -40,11 +40,11 @@ const menuItems = [{name: 'CV', href: 'cv'},{name: 'Проекты',
               <ul class="flex p-6 gap-3">
                 <li class="row-auto" v-for="item in menuItems" :key="item.href">
                   <NavigationMenuLink as-child>
-                    <NuxtLink :to="item.href" class="hover:bg-active
+                    <a :href="item.href" class="hover:bg-active
               focus:bg-accent p-2 hover:bg-accent rounded-2xl border-2
               border-accent" :class="{'text-blue-500': route.meta.title === item.name}">
                       {{ item.name }}
-                    </NuxtLink>
+                    </a>
                   </NavigationMenuLink>
                 </li>
               </ul>
