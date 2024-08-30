@@ -43,13 +43,44 @@ const cvData = ref(
           'Разработка компонентов на React'],
         taskDesc: 'Верстка лендосов, страниц магазина, создание дизайнов и макетов на figmа'
       }],
-      wannableJobs:['Frontend разработчик','Js разработчик','Fullstack разработчик']
+      wannableJobs:['Frontend разработчик','Js разработчик','Fullstack разработчик'],
+      contactInfo: {
+        "Телефон": {
+          type:"phone",
+          value: "+7(982)735-21-31",
+          url:"+79827352131",
+        },
+        "Почта": {
+          value: "reznickov.k@yandex.ru",
+        },
+        "Telegram": {
+          value: "@kai_kane",
+          url: "https://t.me/kai_Kane"
+        },
+        "Github": {
+          value: "https://github.com/kirka50",
+          url: "https://github.com/kirka50"
+        },
+        "HH.ru": {
+          value: "Резюме",
+          url: "https://ekaterinburg.hh.ru/resume/11c1b7cfff0be745f20039ed1f436d454b6b78"
+        }
 
+      }
     },
 
 );
 
 const date = new Date().getFullYear();
+
+const copyPhone = async (phone: string) => {
+  try {
+    await navigator.clipboard.writeText(phone);
+  }
+  catch (error) {
+    console.log(error);
+  }
+}
 </script>
 <!--TODO: Сделать резюме, основу взять из того сайта-->
 <template>
@@ -81,15 +112,30 @@ const date = new Date().getFullYear();
           </div>
         </div>
       </div>
-      <div class="flex mt-4 justify-between font-bold text-xl">
-        <div>
+      <div class="flex flex-col md:flex-row mt-4 justify-between font-bold text-xl">
+        <div class="flex flex-col justify-center text-center rounded-2xl bg-accent p-2 md:bg-background md:text-start md:block">
           <div>Желаемая должность</div>
-          <ul class="font-light ml-10 list-disc">
+          <ul class="font-light md:ml-10 md:list-disc">
             <li class="mt-4" v-for="job in cvData.wannableJobs">{{job}}</li>
           </ul>
         </div>
         <div>
-          Контактные данные
+          <div class="flex flex-col justify-center text-center rounded-2xl bg-accent p-2 md:bg-background md:text-start md:block">
+            <div>Контактные данные</div>
+            <ul class="font-light md:ml-10 md:list-disc">
+              <li class="mt-4" v-for="(contact, label) in cvData.contactInfo">
+                <UiPopover v-if="contact?.type == 'phone'">
+                  <UiPopoverTrigger @click="copyPhone(contact.value)" class="underline underline-offset-4">
+                    {{label}}: {{ contact.value }}
+                  </UiPopoverTrigger>
+                  <UiPopoverContent>
+                    Скопированно
+                  </UiPopoverContent>
+                </UiPopover>
+                <a v-else :class="contact?.url ? 'underline underline-offset-4 cursor-pointer': ''">{{ label }}: {{contact.value}}</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
       <div class="flex justify-between font-bold text-xl">
