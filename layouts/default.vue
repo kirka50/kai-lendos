@@ -7,8 +7,9 @@ import {
 import customConfig from "~/custom-config";
 
 const route = useRoute();
-const viewport = useViewport();
+const viewport = await useViewport();
 console.log(route.meta.title)
+
 
 const menuItems = [{name: 'CV', href: customConfig.BASE_URL + 'cv'},{name: 'Проекты',
   href: customConfig.BASE_URL +  'projects'},{name: 'Приколюхи', href: customConfig.BASE_URL +  'other'}]
