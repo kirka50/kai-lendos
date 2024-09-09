@@ -113,7 +113,7 @@ const copyPhone = async (phone: string) => {
             <!--            <div class="w-fit">
                           <Icon size="2em" name="twemoji:fire"/> Скилы:
                         </div>-->
-            <div v-for="skill in cvData.personData.skillsTags" :key="skill.skill">
+            <div class="font-light" v-for="skill in cvData.personData.skillsTags" :key="skill.skill">
               <Icon v-if="skill?.skillIcon" size="1.5em" :name="skill.skillIcon"></Icon>
               {{ skill.skill }}
             </div>
