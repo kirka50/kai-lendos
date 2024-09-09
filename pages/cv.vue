@@ -30,7 +30,7 @@ const cvData = ref(
             skillIcon: "devicon:vuejs"
           },
           {
-            skill: "Figma",
+            skill: "React",
             skillIcon: "devicon:react"
           },
         ]
