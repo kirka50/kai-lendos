@@ -5,7 +5,7 @@ import customConfig from "./custom-config";
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   app: {
-    baseURL: customConfig.BASE_URL,
+    baseURL: process.env.NUXT_PUBLIC_BASE_URL || '/',
     buildAssetsDir: 'assets',
   },
   devtools: { enabled: false },
