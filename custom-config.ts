@@ -3,5 +3,5 @@ type config = {
 }
 
 export default <config>{
-    BASE_URL: "/kai-lendos/",
+    BASE_URL: process.env.NUXT_PUBLIC_BASE_URL || '/',
 }

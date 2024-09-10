@@ -4,8 +4,9 @@
   const config = useRuntimeConfig()
 
   const getImageUrl = (image:string): string => {
-    return process.env.NODE_ENV === 'production'? `${config.app.baseURL}portfolio/${image}`
-        : `./portfolio/${image}`
+    console.log(`${config.app.baseURL}portfolio/${image}`);
+    return `${config.app.baseURL}portfolio/${image}`
+
   }
 </script>
 
