@@ -82,25 +82,25 @@ const cvData = ref(
         {
           title: 'GitHub',
           description: 'Мой крутой гитхаб',
-          image: "portfolio/github.png",
+          image: "github.png",
           href: 'https://github.com/kirka50/',
         },
         {
           title: 'Грамоты/Бумажки',
           description: 'Мой крутой гитхаб',
-          image: "portfolio/papers.png",
+          image: "papers.png",
           href: 'https://github.com/kirka50/',
         },
         {
           title: 'TopBlog',
           description: 'Мой крутой гитхаб',
-          image: "portfolio/topblog.png",
+          image: "topblog.png",
           href: 'https://github.com/kirka50/',
         },
         {
           title: 'IIntegration',
           description: 'Мой крутой гитхаб',
-          image: "portfolio/IIntegration.png",
+          image: "IIntegration.png",
           href: 'https://github.com/kirka50/',
         },
 
