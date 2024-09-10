@@ -1,5 +1,7 @@
 <script setup lang="ts">
 
+import PreviewCard from "~/components/cs/preview-card/PreviewCard.vue";
+
 definePageMeta({
   title: "CV",
 });
@@ -75,8 +77,34 @@ const cvData = ref(
           value: "Резюме",
           url: "https://ekaterinburg.hh.ru/resume/11c1b7cfff0be745f20039ed1f436d454b6b78"
         }
+      },
+      portfolio: [
+        {
+          title: 'GitHub',
+          description: 'Мой крутой гитхаб',
+          image: "portfolio/github.png",
+          href: 'https://github.com/kirka50/',
+        },
+        {
+          title: 'Грамоты/Бумажки',
+          description: 'Мой крутой гитхаб',
+          image: "portfolio/papers.png",
+          href: 'https://github.com/kirka50/',
+        },
+        {
+          title: 'TopBlog',
+          description: 'Мой крутой гитхаб',
+          image: "portfolio/topblog.png",
+          href: 'https://github.com/kirka50/',
+        },
+        {
+          title: 'IIntegration',
+          description: 'Мой крутой гитхаб',
+          image: "portfolio/IIntegration.png",
+          href: 'https://github.com/kirka50/',
+        },
 
-      }
+      ]
     },
 );
 
@@ -121,7 +149,7 @@ const copyPhone = async (phone: string) => {
           </div>
         </div>
       </div>
-      <div class="flex flex-col md:flex-row mt-4 justify-between font-bold text-xl">
+      <div class="flex flex-col md:flex-row gap-6 mt-4 justify-between font-bold text-xl">
         <div
             class="flex flex-col justify-center text-center rounded-2xl bg-accent p-2 md:bg-background md:text-start md:block">
           <div>Желаемая должность</div>
@@ -130,8 +158,9 @@ const copyPhone = async (phone: string) => {
           </ul>
         </div>
         <div>
-          <div
-              class="flex flex-col justify-center text-center rounded-2xl bg-accent p-2 md:bg-background md:text-start md:block">
+          <div class="flex flex-col justify-center
+          text-center rounded-2xl bg-accent p-2 md:bg-background
+           md:text-start">
             <div>Контактные данные</div>
             <ul class="font-light md:ml-10 md:list-disc">
               <li class="mt-4" v-for="(contact, label) in cvData.contactInfo">
@@ -152,37 +181,40 @@ const copyPhone = async (phone: string) => {
         </div>
       </div>
       <a class="text-4xl font-bold">Опыт работы</a>
-      <div class="flex justify-between font-light text-xl">
-      </div>
-      <div v-for="work in cvData.workExp" class="flex justify-between text-xl">
-        <div class="font-light">
-          {{ work.workDate }}
-        </div>
-        <div class="w-1/2">
-          <div>
-            <div class="font-bold">
-              {{ work.workName }}
-            </div>
-            <div>
-              <p class="text-xl font-light">
-                Задачи:
-              </p>
-              <ul class="list-disc font-light">
-                <li class="ml-10" v-for="task in work.workTasks"> {{ task }}</li>
-              </ul>
-            </div>
+      <div class="flex flex-col gap-1 md:gap-2 lg:gap-6">
+        <div v-for="work in cvData.workExp" class="flex flex-col md:flex-row justify-between text-xl mt-8">
+          <div class="font-light p-2 bg-accent rounded-2xl w-fit h-fit">
+            {{ work.workDate }}
           </div>
-          <div class="font-light ">
-            <p>Описание задач:</p>
-            <p class="ml-5">{{ work.taskDesc }}</p>
+          <div class="md:w-1/2">
+            <div>
+              <div class="font-bold">
+                {{ work.workName }}
+              </div>
+              <div>
+                <p class="text-xl font-light">
+                  Задачи:
+                </p>
+                <ul class="list-disc font-light">
+                  <li class="ml-10" v-for="task in work.workTasks"> {{ task }}</li>
+                </ul>
+              </div>
+            </div>
+            <div class="font-light ">
+              <p>Описание задач:</p>
+              <p class="ml-5">{{ work.taskDesc }}</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <UiSeparator/>
-    <div>
+    <UiSeparator class="mt-6"/>
+    <div class="mt-4">
       <div>
-        Портфолио
+        <p class="text-4xl">Портфолио</p>
+        <div class="grid sm:grid-cols-2 text-center gap-2 mt-6">
+          <PreviewCard v-for="card in cvData.portfolio" v-bind="card"/>
+        </div>
       </div>
       <UiSeparator/>
       <div>
