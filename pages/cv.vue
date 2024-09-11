@@ -87,25 +87,33 @@ const cvData = ref(
         },
         {
           title: 'Грамоты/Бумажки',
-          description: 'Мой крутой гитхаб',
+          description: 'Тут все разные бумаги и грамоты. Cвидетельства о том что я молодец огурец',
           image: "papers.png",
           href: 'https://github.com/kirka50/',
         },
         {
           title: 'TopBlog',
-          description: 'Мой крутой гитхаб',
+          description: 'Проект за 2,5 дня на хакатоне',
           image: "topblog.png",
           href: 'https://github.com/kirka50/',
         },
         {
           title: 'IIntegration',
-          description: 'Мой крутой гитхаб',
+          description: 'Лендос нашей команды, эх времена...',
           image: "IIntegration.png",
           href: 'https://github.com/kirka50/',
         },
-
-      ]
+      ],
+      studyExp: [{
+        studyDate: "2020 - 2024",
+        studyName: "Оконченное высшее образование",
+        course: "Информатика и вычислительная техника",
+        faculty: "Инфокоммуникаций, информатики и управлений",
+        major: "Программное обеспечение средств вычислительной техники и автоматизированных систем",
+        studyFacility: 'УрТИСИ СибГУТИ'
+      }]
     },
+
 );
 
 const date = new Date().getFullYear();
@@ -181,32 +189,7 @@ const copyPhone = async (phone: string) => {
         </div>
       </div>
       <a class="text-4xl font-bold">Опыт работы</a>
-      <div class="flex flex-col gap-1 md:gap-2 lg:gap-6">
-        <div v-for="work in cvData.workExp" class="flex flex-col md:flex-row justify-between text-xl mt-8">
-          <div class="font-light p-2 bg-accent rounded-2xl w-fit h-fit">
-            {{ work.workDate }}
-          </div>
-          <div class="md:w-1/2">
-            <div>
-              <div class="font-bold">
-                {{ work.workName }}
-              </div>
-              <div>
-                <p class="text-xl font-light">
-                  Задачи:
-                </p>
-                <ul class="list-disc font-light">
-                  <li class="ml-10" v-for="task in work.workTasks"> {{ task }}</li>
-                </ul>
-              </div>
-            </div>
-            <div class="font-light ">
-              <p>Описание задач:</p>
-              <p class="ml-5">{{ work.taskDesc }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <CsDateProfilerWork :work-exp="cvData.workExp"></CsDateProfilerWork>
     </div>
     <UiSeparator class="mt-6"/>
     <div class="mt-4">
@@ -216,14 +199,15 @@ const copyPhone = async (phone: string) => {
           <PreviewCard v-for="card in cvData.portfolio" v-bind="card"/>
         </div>
       </div>
-      <UiSeparator/>
-      <div>
-        Образование
-      </div>
-      <UiSeparator/>
-      <div>
-        О себе
-      </div>
+    </div>
+    <UiSeparator class="mt-6"/>
+    <div class="text-4xl font-bold">
+      <a>Образование</a>
+      <CsDateProfilerStudy :study-exp="cvData.studyExp"/>
+    </div>
+    <UiSeparator/>
+    <div>
+      О себе
     </div>
   </div>
 </template>
