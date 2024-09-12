@@ -59,6 +59,8 @@ const menuItems = [{name: 'CV', href: customConfig.BASE_URL + 'cv'},{name: 'Пр
   <div class="xl:px-[26rem] lg:px-44 md:px-32 sm:px-2 px-1 mt-5">
     <slot />
   </div>
+  <footer>
+  </footer>
 </template>
 
 <style scoped>
