@@ -95,13 +95,13 @@ const cvData = ref(
           title: 'TopBlog',
           description: 'Проект за 2,5 дня на хакатоне',
           image: "topblog.png",
-          href: 'https://github.com/kirka50/',
+          href: 'https://kirka50.github.io/TopBlog/',
         },
         {
           title: 'IIntegration',
           description: 'Лендос нашей команды, эх времена...',
           image: "IIntegration.png",
-          href: 'https://github.com/kirka50/',
+          href: 'https://kirka50.github.io/IIntegrationLendos/',
         },
       ],
       studyExp: [{
@@ -116,7 +116,14 @@ const cvData = ref(
 
 );
 
-const date = new Date().getFullYear();
+const date = new Date();
+let currentDate = new Date();
+let targetDate = new Date("2023-01-01");
+let diffYears = targetDate.getFullYear() - currentDate.getFullYear();
+let diffMonths = diffYears * 12 + targetDate.getMonth() - currentDate.getMonth();
+let year = -Math.floor(diffMonths / 12) + " г.";
+let month = -diffMonths % 12 + " м.";
+
 
 const copyPhone = async (phone: string) => {
   try {
@@ -141,7 +148,7 @@ const copyPhone = async (phone: string) => {
         </div>
         <div class="flex justify-between mt-2">
           <div class="text-xl font-light">
-            <p><strong class="font-bold">Возраст:</strong> {{ date - 2002 }}</p>
+            <p><strong class="font-bold">Возраст:</strong> {{ date.getFullYear() - 2002 }}</p>
             <p><strong class="font-bold">Место проживания:</strong> Екатеринбург</p>
           </div>
           <div class="bg-gradient-to-b justify-evenly rounded-2xl
@@ -153,7 +160,6 @@ const copyPhone = async (phone: string) => {
               <Icon v-if="skill?.skillIcon" size="1.5em" :name="skill.skillIcon"></Icon>
               {{ skill.skill }}
             </div>
-
           </div>
         </div>
       </div>
@@ -188,11 +194,12 @@ const copyPhone = async (phone: string) => {
           </div>
         </div>
       </div>
-      <a class="text-4xl font-bold">Опыт работы</a>
+      <UiSeparator/>
+      <a class="text-4xl font-bold">Опыт работы <a class="text-blue-500">{{ year + " " + month }}</a></a>
       <CsDateProfilerWork :work-exp="cvData.workExp"></CsDateProfilerWork>
     </div>
     <UiSeparator class="mt-6"/>
-    <div class="mt-4">
+    <div class="mt-4 md:mt-10">
       <div>
         <p class="text-4xl">Портфолио</p>
         <div class="grid sm:grid-cols-2 text-center gap-2 mt-6">
@@ -201,13 +208,40 @@ const copyPhone = async (phone: string) => {
       </div>
     </div>
     <UiSeparator class="mt-6"/>
-    <div class="text-4xl font-bold">
+    <div class="text-4xl font-bold mt-2 md:mt-10">
       <a>Образование</a>
       <CsDateProfilerStudy :study-exp="cvData.studyExp"/>
     </div>
-    <UiSeparator/>
-    <div>
-      О себе
+    <UiSeparator class="mt-6"/>
+    <div class="mt-2 md:mt-10">
+      <p class="text-4xl">О себе</p>
+      <div class="mt-10">
+        <p>Занимаюсь разработкой веб страниц. Разработкой бизнесс моделей и сущностей на стороне клиента. Разрабатываю
+          дизайн и прототипы компонентов с контейнерами. Так же занимаюсь разработкой ux/ui макетов веб страниц и
+          отдельных компонентов. Для этого использую все ныне актульные и популярные инструменты и фреймворки основанные
+          на JS и TS (Vue,React и тд). Имею опыт работы с графическими редакторами такие как Adobe Illustrator,
+          Photoshop, Figma</p>
+        <p class="mt-6 text-2xl">Работал над задачами:</p>
+        <ul class="mt-2">
+          <li>- Адаптивно-отзывчивая вёрстка</li>
+          <li>- Создание бизнес моделей</li>
+          <li>- Обработка запросов/Взаимодействие с API</li>
+        </ul>
+        <p class="mt-6">Учавствую в хакатонах по ИИ, создавал отзывчивые веб страницы для кейсов, взаимодействовал с api по кейсам.
+          Создавал макеты страници их прототипы.</p>
+        <p class="mt-6">Полностью выполнял задачи frontend разработчика в команде кейса</p>
+        <p class="mt-6 text-2xl">Пример кейсов:</p>
+        <ul class="flex flex-col gap-2">
+          <li>- Победитель Цифрового прорыва 2022 в Северо-Кавказском федеральном округе в кейсе «ИИ в поисках гренландского кита» - 1 место.</li>
+          <li>- Финалист хакатона Полюс - 3 место,</li>
+          <li>- Финалист Цифрового прорыва 2023 в Северо-Западном федеральном округе в кейсе «Минпросвещения России при участии проекта ТопБлог» - 3 место,</li>
+          <li>- «Искусственный интеллект прогнозирует инфляцию» от ЦБ РФ - 4 место,</li>
+          <li>- «Мой психолог ИИ: помоги нейросети выявить уровень стресса» от «Международной Академии исследования лжи» - 4 место,</li>
+          <li>- Финалист Цифрового прорыва 2023 в Нижнем Новгороде в кейсе «Модель склонности клиента к приобретению машиноместа» - 5 место</li>
+          <li>- «Алгоритм на страже экономической стабильности» от Центрального банка Российской Федерации - 5 место,</li>
+          <li>- «ИИ фотобанк для Поискового отряда» от организации «ЛизаАлерт» - 12 место</li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
