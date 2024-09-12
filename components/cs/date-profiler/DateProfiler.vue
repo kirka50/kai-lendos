@@ -6,14 +6,15 @@ const props = defineProps<DateProfilerProps>()
 
 <template>
     <div class="flex flex-col md:flex-row justify-between text-xl mt-8">
-      <div class="font-light p-2 bg-accent rounded-2xl w-fit h-fit">
+      <div class="font-light hidden md:block md:p-2 md:bg-accent rounded-2xl w-fit h-fit">
         {{ props.dateLine }}
       </div>
       <div class="md:w-1/2">
         <div>
-          <div class="font-bold">
+          <div class="font-bold text-2xl">
             {{ props.dateTitle }}
           </div>
+          <p class="text-xl font-light italic">{{ props.dateLine }}</p>
           <slot name="dateDescription"></slot>
         </div>
       </div>
