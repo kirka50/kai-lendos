@@ -121,7 +121,7 @@ let currentDate = new Date();
 let targetDate = new Date("2023-01-01");
 let diffYears = targetDate.getFullYear() - currentDate.getFullYear();
 let diffMonths = diffYears * 12 + targetDate.getMonth() - currentDate.getMonth();
-let year = -Math.floor(diffMonths / 12) + " г.";
+let year = -Math.floor(diffMonths / 12) - 1 + " г.";
 let month = -diffMonths % 12 + " м.";
 
 
