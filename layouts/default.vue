@@ -16,7 +16,7 @@ useSeoMeta(
       ogTitle: "KaiLendos",
       description: 'Мой лендин сайт, тут моё резюме и всякая всячина',
       ogDescription: 'Мой лендин сайт, тут моё резюме и всякая всячина',
-      ogImage: '@assets/cv/person_image.jpg',
+      ogImage: 'person_image.jpg',
       author: 'KaiKane',
       robots: 'index, follow',
 
