@@ -57,6 +57,7 @@ const cvData = ref(
       contactInfo: {
         "Телефон": {
           type: "copy",
+          phone: 'true',
           value: "+7(982)735-21-31",
           url: "+79827352131",
         },
@@ -153,9 +154,6 @@ const copyPhone = async (phone: string) => {
           </div>
           <div class="bg-gradient-to-b justify-evenly rounded-2xl
           bg-accent p-2 w-1/3 h-full flex flex-row flex-wrap gap-2 items-baseline">
-            <!--            <div class="w-fit">
-                          <Icon size="2em" name="twemoji:fire"/> Скилы:
-                        </div>-->
             <div class="font-light" v-for="skill in cvData.personData.skillsTags" :key="skill.skill">
               <Icon v-if="skill?.skillIcon" size="1.5em" :name="skill.skillIcon"></Icon>
               {{ skill.skill }}
@@ -178,7 +176,10 @@ const copyPhone = async (phone: string) => {
             <div>Контактные данные</div>
             <ul class="font-light md:ml-10 md:list-disc">
               <li class="mt-4" v-for="(contact, label) in cvData.contactInfo">
-                <UiPopover v-if="contact?.type == 'copy'">
+                <a v-if="contact?.phone" :href="`tel:` + contact?.url"
+                   :class="contact?.url ? 'underline underline-offset-4 cursor-pointer': ''">{{ label }}:
+                  {{ contact.value }}</a>
+                <UiPopover v-else-if="contact?.type == 'copy'">
                   <UiPopoverTrigger @click="copyPhone(contact.value)" class="underline underline-offset-4">
                     {{ label }}: {{ contact.value }}
                   </UiPopoverTrigger>
