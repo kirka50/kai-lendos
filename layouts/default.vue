@@ -10,6 +10,18 @@ const route = useRoute();
 const viewport = await useViewport();
 console.log(route.meta.title)
 
+useSeoMeta(
+    {
+      title: "KaiLendos",
+      ogTitle: "KaiLendos",
+      description: 'Мой лендин сайт, тут моё резюме и всякая всячина',
+      ogDescription: 'Мой лендин сайт, тут моё резюме и всякая всячина',
+      ogImage: '@assets/cv/person_image.jpg',
+      author: 'KaiKane',
+      robots: 'index, follow',
+
+    }
+)
 
 const menuItems = [{name: 'CV', href: customConfig.BASE_URL + 'cv'},{name: 'Проекты',
   href: customConfig.BASE_URL +  'projects'},{name: 'Приколюхи', href: customConfig.BASE_URL +  'other'}]
