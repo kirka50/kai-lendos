@@ -16,7 +16,8 @@ useSeoMeta(
       ogTitle: "KaiLendos",
       description: 'Мой лендин сайт, тут моё резюме и всякая всячина',
       ogDescription: 'Мой лендин сайт, тут моё резюме и всякая всячина',
-      ogImage: 'person_image.jpg',
+      ogImage: 'https://kirka50.github.io/kai-lendos/portfolio/person_image.jpg',
+      ogUrl: 'https://kirka50.github.io/kai-lendos/portfolio/',
       author: 'KaiKane',
       robots: 'index, follow',
 
