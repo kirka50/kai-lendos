@@ -90,7 +90,7 @@ const cvData = ref(
           title: 'Грамоты/Бумажки',
           description: 'Тут все разные бумаги и грамоты. Cвидетельства о том что я молодец огурец',
           image: "papers.png",
-          href: 'https://github.com/kirka50/',
+          href: 'https://drive.google.com/drive/folders/1oNwehgOJLu2A25aTDGXEHZoH6qNfx7Oe?usp=sharing',
         },
         {
           title: 'TopBlog',
