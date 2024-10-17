@@ -5,7 +5,15 @@ definePageMeta({
 </script>
 
 <template>
-  Прочее
+  <div class="flex">
+    <UiCard class="max-w-[300px]">
+      <NuxtLink to="/vebmotor">
+        <UiCardHeader>
+          Тестовое веб мотор
+        </UiCardHeader>
+      </NuxtLink>
+    </UiCard>
+  </div>
 </template>
 
 <style scoped>
