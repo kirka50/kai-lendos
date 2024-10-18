@@ -6,6 +6,9 @@
   :root {
     --background: 0 0% 100%;
     --foreground: 224 71.4% 4.1%;
+
+    --vebmotor-background: 0, 7%, 95%;
+    --vebmotor-foreground: 210, 100%, 47%;
  
     --muted: 220 14.3% 95.9%;
     --muted-foreground: 220 8.9% 46.1%;
@@ -21,10 +24,16 @@
  
     --primary: 220.9 39.3% 11%;
     --primary-foreground: 210 20% 98%;
- 
+
+    --vebmotor-primary: 220, 22%, 22%;
+    --vebmotor-primary-foreground: 0, 0%, 100%;
+
+    --vebmotor-secondary: 210, 100%, 47%;
+    --vebmotor-secondary-foreground: 0, 0%, 100%;
+
     --secondary: 220 14.3% 95.9%;
     --secondary-foreground: 220.9 39.3% 11%;
- 
+
     --accent: 220 14.3% 95.9%;
     --accent-foreground: 220.9 39.3% 11%;
  

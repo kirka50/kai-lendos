@@ -7,6 +7,12 @@ module.exports = {
   prefix: "",
   
   theme: {
+    fontSize: {
+      vbsm: ["16px", "20px"],
+      vbmd: ["18px", "22px"],
+      vblg: ["24px", "29px"],
+      vbxl: ["32px", "39px"],
+    },
     container: {
       center: true,
       padding: "2rem",
@@ -21,13 +27,23 @@ module.exports = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        vbforeground: "hsl(var(--vebmotor-foreground))",
+        vbbackground: "hsl(var(--vebmotor-background))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },
+        vbprimary: {
+          DEFAULT: "hsl(var(--vebmotor-primary))",
+          foreground: "hsl(var(--vebmotor-primary-foreground))",
+        },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
+        },
+        vbsecondary: {
+          DEFAULT: "hsl(var(--vebmotor-secondary))",
+          foreground: "hsl(var(--vebmotor-secondary-foreground))",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
