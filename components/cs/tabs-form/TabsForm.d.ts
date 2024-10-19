@@ -13,4 +13,5 @@ interface TabContent {
     tabContentTitle: string;
     tabContentText: string;
 }
+
 export {TabsFormProps, TabContent, Tab}
