@@ -17,6 +17,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     "@nuxt/icon",
     'nuxt-viewport',
+    '@nuxtjs/google-fonts'
   ],
   viewport: {
     breakpoints: {
