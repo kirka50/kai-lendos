@@ -75,7 +75,7 @@
 </script>
 
 <template>
-  <cs-tabs-form class="" :tabs-form-content="data.tabsFormContent" ></cs-tabs-form>
+  <lazy-cs-tabs-form class="" :tabs-form-content="data.tabsFormContent" ></lazy-cs-tabs-form>
 </template>
 
 <style scoped>
