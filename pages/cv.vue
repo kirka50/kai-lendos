@@ -39,14 +39,14 @@ const cvData = ref(
       },
       workExp: [{
         workName: "Фриланс",
-        workDate: "Январь 2023 - Май 2024",
+        workDate: "Январь 2022 - Октябрь 2023",
         workTasks: ['Адаптивно - отзывчивая вёрстка по макетам',
           'Разработка модулей и компонентов на Vue', 'Создание веб-страниц с нуля',
           'Разработка компонентов на React'],
         taskDesc: 'Верстка лендосов, страниц магазина, создание дизайнов и макетов на figmа'
       }, {
         workName: "ООО 'Первый бит' - Web-Developer",
-        workDate: "Май 2024 - Настоящее время",
+        workDate: "Октябрь 2023 - Настоящее время",
         workTasks: ['Работа по модификации crm систем',
           'Верстка новых модулей для crm систем',
           'Разработка мобильных приложений на основе PWA',
@@ -119,7 +119,7 @@ const cvData = ref(
 
 const date = new Date();
 let currentDate = new Date();
-let targetDate = new Date("2023-01-01");
+let targetDate = new Date("2022-01-01");
 let diffYears = targetDate.getFullYear() - currentDate.getFullYear();
 let diffMonths = diffYears * 12 + targetDate.getMonth() - currentDate.getMonth();
 let year = -Math.floor(diffMonths / 12) - 1 + " г.";
